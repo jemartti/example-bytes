@@ -1,0 +1,14 @@
+{
+  "author": "byte",
+  "dependencies": {
+    "body-parser": "~1.5.2",
+    "express": "~4.7.4",
+  },
+  "description": "",
+  "engines": {
+    "node": "~0.10.x"
+  },
+  "main": "index.js",
+  "name": "hello-world",
+  "version": "0.0.1"
+}
