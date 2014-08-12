@@ -12,7 +12,7 @@
         "stock-data": "~0.1.0",
         "underscore": "~1.6.0"
     },
-    "description": "Stocks example byte for the OneHQ ByteAPI",
+    "description": "Stocks (attachments and config) example byte for the OneHQ ByteAPI",
     "engines": {
         "node": ">= 0.10.0"
     },
