@@ -5,16 +5,18 @@
     },
     "dependencies": {
         "body-parser": "~1.6.3",
-        "express": "~4.8.3"
+        "dateformat": "1.0.8-1.2.3",
+        "express": "~4.8.3",
+        "request": "^2.40.x"
     },
-    "description": "Hello world example byte for the OneHQ ByteAPI",
+    "description": "Stocks example byte for the OneHQ ByteAPI",
     "engines": {
         "node": ">= 0.10.0"
     },
     "homepage": "https://github.com/onehq/example-bytes",
     "license": "MIT",
-    "main": "byte.js",
-    "name": "hello-world",
+    "main": "stocks.js",
+    "name": "stocks byte",
     "repository": {
         "type": "git",
         "url": "https://github.com/onehq/example-bytes.git"
