@@ -7,7 +7,6 @@ app.all('/hellobyte', function(req, res) {
     message: 'You did it!',
     name: 'Hello Byte World'
   });
-  return;
 });
 
 var port = process.env.PORT || 5000;
