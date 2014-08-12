@@ -1,0 +1,24 @@
+{
+    "author": "one <team@one.co>",
+    "bugs": {
+        "url": "https://github.com/onehq/example-bytes/issues"
+    },
+    "dependencies": {
+        "body-parser": "~1.6.3",
+        "dateformat": "1.0.8-1.2.3",
+        "express": "~4.8.3",
+        "request": "^2.40.x"
+    },
+    "description": "Example bytes for the OneHQ ByteAPI",
+    "engines": {
+        "node": ">= 0.10.0"
+    },
+    "homepage": "https://github.com/onehq/example-bytes",
+    "license": "MIT",
+    "name": "example-bytes",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/onehq/example-bytes.git"
+    },
+    "version": "0.0.1"
+}
