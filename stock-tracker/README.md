@@ -1,0 +1,1 @@
+Run `npm install` to get packages, then `node stocks.js` to run.

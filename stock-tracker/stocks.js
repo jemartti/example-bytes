@@ -2,6 +2,7 @@ var bodyParser = require('body-parser');
 var dateFormat = require('dateformat');
 var express = require('express');
 var request = require('request');
+var time = require('time')(Date);
 
 
 var app = express();
@@ -129,3 +130,4 @@ app.all('/stocks/config', function(req, res) {
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {});
+console.log('Stocks-byte listening on :' + port);
