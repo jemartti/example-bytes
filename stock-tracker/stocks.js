@@ -8,6 +8,7 @@ var _ = require('underscore');
 
 var app = express();
 app.use(bodyParser.json());
+app.set('view engine', 'ejs');
 
 
 app.all('/stocks', function(req, res) {
