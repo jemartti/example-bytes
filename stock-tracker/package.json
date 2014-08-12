@@ -1,5 +1,5 @@
 {
-    "author": "one <team@one.co>",
+    "author": "Byte <byte@one.co>",
     "bugs": {
         "url": "https://github.com/onehq/example-bytes/issues"
     },
@@ -9,13 +9,14 @@
         "express": "~4.8.3",
         "request": "^2.40.x"
     },
-    "description": "Example bytes for the OneHQ ByteAPI",
+    "description": "Stocks example byte for the OneHQ ByteAPI",
     "engines": {
         "node": ">= 0.10.0"
     },
     "homepage": "https://github.com/onehq/example-bytes",
     "license": "MIT",
-    "name": "example-bytes",
+    "main": "stocks.js",
+    "name": "stocks byte",
     "repository": {
         "type": "git",
         "url": "https://github.com/onehq/example-bytes.git"

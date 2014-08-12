@@ -1,14 +1,23 @@
 {
-  "author": "byte",
-  "dependencies": {
-    "body-parser": "~1.5.2",
-    "express": "~4.7.4",
-  },
-  "description": "",
-  "engines": {
-    "node": "~0.10.x"
-  },
-  "main": "byte.js",
-  "name": "hello-world",
-  "version": "0.0.1"
+    "author": "Byte <byte@one.co>",
+    "bugs": {
+        "url": "https://github.com/onehq/example-bytes/issues"
+    },
+    "dependencies": {
+        "body-parser": "~1.6.3",
+        "express": "~4.8.3"
+    },
+    "description": "Hello world example byte for the OneHQ ByteAPI",
+    "engines": {
+        "node": ">= 0.10.0"
+    },
+    "homepage": "https://github.com/onehq/example-bytes",
+    "license": "MIT",
+    "main": "byte.js",
+    "name": "hello-world",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/onehq/example-bytes.git"
+    },
+    "version": "0.0.1"
 }
