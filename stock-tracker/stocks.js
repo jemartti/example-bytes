@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 
-app.all('/stocks', function(req, res) {
+app.all('/', function(req, res) {
   var symbol = (req.body.data && req.body.data.symbol) ? req.body.data.symbol : 'TWTR';
 
   // Set up the one week date range
@@ -61,7 +61,7 @@ app.all('/stocks', function(req, res) {
 });
 
 // On the config call, serve up the config page
-app.all('/stocks/config', function(req, res) {
+app.all('/config', function(req, res) {
   res.render('stocks_config');
 });
 
