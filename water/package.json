@@ -1,0 +1,26 @@
+{
+    "author": "Byte <byte@one.co>",
+    "bugs": {
+        "url": "https://github.com/onehq/example-bytes/issues"
+    },
+    "dependencies": {
+        "body-parser": "~1.6.3",
+        "express": "~4.8.3",
+        "moment": "^2.8.1",
+        "request": "^2.40.x",
+        "underscore": "~1.6.0"
+    },
+    "description": "Water counter (actions) example byte for the OneHQ ByteAPI",
+    "engines": {
+        "node": ">= 0.10.0"
+    },
+    "homepage": "https://github.com/onehq/example-bytes",
+    "license": "MIT",
+    "main": "water.js",
+    "name": "water-byte",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/onehq/example-bytes.git"
+    },
+    "version": "0.0.1"
+}
