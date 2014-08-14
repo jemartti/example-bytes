@@ -22,34 +22,51 @@ app.all('/', function(req, res) {
 
   // Fetch the stock data from Yahoo! finance
   stockData.fetch({
-    symbol: symbol,
-    startDate: then.format('YYYY-MM-DD'),
-    endDate: now.format('YYYY-MM-DD'),
-    useCache: false
+    "symbol": symbol,
+    "startDate": then.format('YYYY-MM-DD'),
+    "endDate": now.format('YYYY-MM-DD'),
+    "useCache": false
   }, function(err, data) {
     if (!err) {
       var bars = [];
-      var latestClose = '';
+      var latestClose = {
+        "value": "",
+        "previous": ""
+      };
 
       // Push each of the latest close values to the bars array
       _.each(data.adj_close, function(element, index, list) {
-        latestClose = element.toFixed(2);
+        latestClose.previous = latestClose.value;
+        latestClose.value = element.toFixed(2);
 
         bars.push({
-          x: index,
-          xDisplay: moment(data.date[index], 'YYYY-MM-DD').format('dd'),
-          y: element,
-          yDisplay: latestClose
+          "x": index,
+          "xDisplay": moment(data.date[index], 'YYYY-MM-DD').format('dd'),
+          "y": element,
+          "yDisplay": latestClose.value
         });
       });
 
+      var note = {
+        "type": "ok",
+        "message": ""
+      }
+      if (latestClose.value > latestClose.previous) {
+        note.message = "+" + (((latestClose.value - latestClose.previous) / latestClose.previous) * 100).toFixed(2) + "%";
+        note.type = "good";
+      } else if (latestClose.value < latestClose.previous) {
+        note.message = "-" + ((1 - (latestClose.value / latestClose.previous)) * 100).toFixed(2) + "%";
+        note.type = "bad";
+      }
+
       // Send the result back to the byte core
       res.send({
-        name: symbol.toUpperCase(),
-        message: 'Latest close: $' + latestClose,
-        attachments: [{
-          type: 'series',
-          data: bars
+        "name": symbol.toUpperCase(),
+        "message": "Latest close: $" + latestClose.value,
+        "note": note,
+        "attachments": [{
+          "type": "series",
+          "data": bars
         }],
       });
     } else {
