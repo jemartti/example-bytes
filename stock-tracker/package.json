@@ -5,12 +5,14 @@
     },
     "dependencies": {
         "body-parser": "~1.6.3",
-        "dateformat": "1.0.8-1.2.3",
+        "ejs": "~1.0.0",
         "express": "~4.8.3",
+        "moment": "^2.8.1",
         "request": "^2.40.x",
-        "time": "^0.11.x"
+        "stock-data": "~0.1.0",
+        "underscore": "~1.6.0"
     },
-    "description": "Stocks example byte for the OneHQ ByteAPI",
+    "description": "Stocks (attachments and config) example byte for the OneHQ ByteAPI",
     "engines": {
         "node": ">= 0.10.0"
     },

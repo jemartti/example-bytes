@@ -1,0 +1,25 @@
+<head>
+  <script src="//assets.byte.co/byte-config.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="//assets.byte.co/byte-styles.css">
+  <script>
+    $(function() {
+      $('#saveButton').click(function() {
+        Byte.write({
+          'symbol': $('#symbol').attr('value')
+        });
+        return false;
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <form class="byte-config">
+    <fieldset>
+      <label for="symbol">Symbol</label>
+      <input id="symbol" name="symbol" placeholder="ex: TWTR">
+    </fieldset>
+    <input type="submit" id="saveButton" value="Save">
+  </form>
+</body>
