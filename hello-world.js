@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json());
 
-app.all('/hello', function(req, res) {
+app.all('/', function(req, res) {
   res.send({
     name: 'Example',
     message: 'Hello World!'
