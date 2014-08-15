@@ -1,1 +1,0 @@
-Run `npm install` to get packages, then `node byte.js` to run.
