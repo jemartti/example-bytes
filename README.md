@@ -7,5 +7,5 @@ This root directory includes the basic Hello World example.
 
 The stock-tracker directory includes a Byte with user configuration and an external data source.
 
-
+The water directory includes a Byte with user actions.
 
