@@ -8,6 +8,10 @@ var _ = require('underscore');
 var app = express();
 app.use(bodyParser.json());
 
+// Set up the one week date range
+// 'America/New_York'
+var tzOffset = -4;
+
 
 app.all('/', function(req, res) {
   // Restore the data from the last update, if it exists
@@ -23,14 +27,13 @@ app.all('/', function(req, res) {
   ];
 
   // Shift the drinkHistory, if it's now the next day
-  var now = Math.round(new Date().getTime() / 1000.0);
-  if (latestCheck !== 0) {
-    var diff = Math.floor(((latestCheck + 86400.0) - now) / 86400.0);
-    if (diff > 0) {
-      drinkHistory.pop();
-      drinkHistory.unshift([]);
-    }
+  var today = moment().utc().zone(-tzOffset).startOf('day');
+  if (latestCheck !== 0 && today.isAfter(moment.unix(latestCheck).utc().zone(-tzOffset))) {
+    drinkHistory.pop();
+    drinkHistory.unshift([]);
   }
+
+  var now = moment().utc().zone(-tzOffset).unix();
   latestCheck = now;
 
   // increment today's drinks if the drink button is pushed
@@ -40,16 +43,16 @@ app.all('/', function(req, res) {
 
   // Populate the graph data
   var graph = [];
-  var todayLabel = moment().startOf('day').unix();
+  var todayLabel = moment().utc().zone(-tzOffset).startOf('day');
   _.each(drinkHistory, function(element, index, list) {
     graph.unshift({
       x: index,
       y: drinkHistory[index].length,
       yDisplay: String(drinkHistory[index].length),
-      xDisplay: moment.unix(todayLabel).format('dd')
+      xDisplay: todayLabel.format('dd')
     });
 
-    todayLabel -= 86400;
+    todayLabel.subtract(1, 'day');
   });
 
   // Send the response to the Byte Core
