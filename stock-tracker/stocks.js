@@ -10,14 +10,15 @@ var app = express();
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
+// Set up the one week date range
+// 'America/New_York'
+var tzOffset = -4;
+
 
 app.all('/', function(req, res) {
   var symbol = (req.body.data && req.body.data.symbol) ? req.body.data.symbol : 'TWTR';
 
-  // Set up the one week date range
-  // 'America/New_York'
-  var tzOffset = -4;
-  var now = moment().utc().add(tzOffset);
+  var now = moment().utc().zone(-tzOffset);
   var then = now.clone().subtract(1, 'week');
 
   // Fetch the stock data from Yahoo! finance

@@ -4,9 +4,9 @@
         "url": "https://github.com/onehq/example-bytes/issues"
     },
     "dependencies": {
-        "body-parser": "~1.6.3",
+        "body-parser": "~1.6.5",
         "ejs": "~1.0.0",
-        "express": "~4.8.3",
+        "express": "~4.8.5",
         "moment": "^2.8.1",
         "request": "^2.40.x",
         "stock-data": "~0.1.0",
