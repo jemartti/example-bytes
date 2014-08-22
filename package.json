@@ -4,8 +4,8 @@
     "url": "https://github.com/onehq/example-bytes/issues"
   },
   "dependencies": {
-    "body-parser": "^1.6.4",
-    "express": "^4.8.4"
+    "body-parser": "^1.6.5",
+    "express": "^4.8.5"
   },
   "description": "Hello world example byte for the Byte API",
   "engines": {
